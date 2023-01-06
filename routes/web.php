@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('post/create', [App\Http\Controllers\PostController::class, 'create']);
+
+
+Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('home');
+Route::get('posts/create', [App\Http\Controllers\PostController::class, 'create']);
 Route::post('post', [App\Http\Controllers\PostController::class, 'store']);
 Route::get('post/{post}/edit', [App\Http\Controllers\PostController::class, 'edit']);
 Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show']);
