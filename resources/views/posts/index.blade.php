@@ -17,16 +17,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($posts as $post)
+                       @foreach($post as $post)
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
                             <td>{{ date('Y-m-d', strtotime($post->published_at)) }}</td>
                             <td>{{ date('Y-m-d', strtotime($post->created_at)) }}</td>
                             <td>
-                            <a href="posts/{{$post->id}}" class="btn btn-primary">Show</a>
-                            <a href="posts/{{$post->id}}/edit" class="btn btn-primary">Edit</a>
-                            <form action="posts/{{$post->id}}" method="post" class="d-inline">
+                            <a href="post/{{$post->id}}" class="btn btn-primary">Show</a>
+                            <a href="post/{{$post->id}}/edit" class="btn btn-primary">Edit</a>
+                            <form action="post/{{$post->id}}" method="post" class="d-inline">
                                 {{ csrf_field() }}
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>

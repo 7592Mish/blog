@@ -5,17 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
+
 class PostController extends Controller
 {
     public function index()
     {
         $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        return view('post.index', compact('post'));
     }
 
     public function create()
     {
-        return view('posts.create');
+        return view('post.create');
     }
 
     public function store(Request $request)
@@ -35,12 +36,12 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        return view('post.show', compact('post'));
     }
 
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        return view('post.edit', compact('post'));
     }
 
     public function update(Post $post, Request $request)

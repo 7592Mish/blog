@@ -14,7 +14,7 @@
                         </div>
                     @endif
                     
-                    <form action="/posts/{{$post->id}}" method="post">
+                    <form action="/post/{{$post->id}}" method="post">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -34,7 +34,6 @@
                         
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    
                 </div>
             </div>
         </div>
